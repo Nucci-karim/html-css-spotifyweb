@@ -1,0 +1,296 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: gray;
+}
+
+strong{
+    color: white;
+}
+
+.flex{
+    display: flex;
+}
+
+.column{
+    flex-direction: column;
+}
+
+.space-between{
+    justify-content: space-between;
+    
+}
+
+#contenitore-tutto{
+    height: 100vh;
+    width: 100%;
+}
+
+#contenitore-top{
+    height: calc(100% - 70px);
+    display: flex;
+    overflow: hidden;
+}
+
+#contenitore-bottom{
+    height: 70px;
+    background-color: rgb(40 40 40);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+/* main centrale con album */
+main{
+    width: calc(100% - 80px);
+    height: 100%;
+    background-color: rgb(20 25 34);
+    overflow: auto;
+}
+
+#upgrade{
+    position: fixed;
+    top: 0;
+    width: calc(100% - 80px);
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 25px 10px 25px 0;
+    text-align: right;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+#upgrade .btn{
+    border: 1px solid white;
+    border-radius: 20px;
+    padding: 10px 15px;
+}
+
+main nav{
+    margin-top: 100px;
+}
+
+main nav ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+main nav ul li{
+    margin: 0.5rem 1rem;
+    list-style-type: none;
+}
+
+main nav ul li:hover a{
+    opacity: 1;
+}
+
+main nav ul li:hover a::after{
+    position: absolute;
+    content: '';
+    display: inline-block;
+    height: 3px;
+    width: 40%;
+    background-color: red;
+    bottom: -10px;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+main nav ul li a{
+    opacity: 0.5;
+}
+
+main nav ul li a{
+    position: relative;
+}
+
+main nav ul li .active::after{
+    position: absolute;
+    content: '';
+    display: inline-block;
+    height: 3px;
+    width: 40%;
+    background-color: rgb(173 255 46);
+    bottom: -10px;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+/* albums */
+#recently-played{
+    padding: 1rem;
+}
+
+#recently-played h2{
+    color: white;
+    margin: 1rem 0;
+}
+
+#recently-played .albums{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#recently-played .album{
+    flex-basis: calc(100% / 2 - 2%);
+    text-align: center;
+    color: white;
+    margin: 0.15rem;
+}
+
+#recently-played .album img{
+    width: 100%;
+}
+
+#popular-artists .album img{
+    object-fit: cover;
+    display: inline-block;
+    border-radius: 50%;
+}
+
+#recently-played h6{
+    flex-basis: calc(100% / 2);
+    text-align: center;
+    color: rgb(137, 137, 137);
+}
+
+#recently-played h5{
+    color: rgb(137, 137, 137);
+}
+
+/* parte al lato sinistro */
+aside{
+    background-color: black;
+    width: 70px;
+    height: 100%;
+}
+
+.left-side{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#aside-top{
+    height: calc(100% - 90px);
+    min-height: 200px;
+    text-align: center;
+}
+
+#aside-top img,
+#aside-bottom img {
+    display: block;
+    width: 30%;
+    opacity: 0.5;
+    margin: 15px auto;
+}
+
+#aside-top img:hover, #aside-bottom img:hover{
+    opacity: 1;
+}
+
+/* #aside-bottom{
+    height: 90px;
+} */
+
+#aside-bottom img:first-child{
+    height: 15px;
+}
+
+/* parte sotto footer */
+
+#bottom-col-left{
+    display: flex;
+    align-items: center;
+    height: 80%;
+}
+
+#bottom-col-left img{
+    height: 50%;
+    margin: 0 15px;
+}
+
+#bottom-col-center{
+    width: 40%;
+}
+
+#bottom-info-brano{
+    display: flex;
+    flex-direction: column;
+    font-size: small;
+}
+
+#bottom-center-controllers{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#bottom-center-controllers i{
+    margin: 0 0.5rem;
+}
+#bottom-center-time{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+#bottom-center-time .time-bg, #bottom-col-right .time-bg{
+    background-color: #151922;
+    height: 5px;
+    width: 70%;
+    border-radius: 10px;
+}
+
+#bottom-center-time .time, #bottom-col-right .time{
+    background-color: #838383;
+    height: 5px;
+    width: 20%;
+    border-radius: 10px;
+}
+
+#bottom-col-right{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0.5rem;
+    width: 20%;
+}
+
+/* mobile s */
+@media only screen and (min-width: 480px ){
+    aside{
+        width: 250px;
+    }
+
+    main{
+        width: calc(100% - 250px);
+    }
+
+    #upgrade{
+        width: calc(100% - 250px);
+    }
+    
+}
+
+@media only screen and (min-width: 780px ){
+    #recently-played .album{
+        flex-basis: calc(100% / 4);
+    }
+    
+}
+
+@media only screen and (min-width: 1024px ){
+    #recently-played .album{
+        flex-basis: calc(100% / 6 );
+    }
+    
+}
