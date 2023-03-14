@@ -178,6 +178,14 @@ aside{
     justify-content: space-between;
 }
 
+#aside-top .logo{
+    display: none;
+}
+
+#aside-top ul li a{
+    display: none;
+}
+
 #aside-top{
     height: calc(100% - 90px);
     min-height: 200px;
@@ -195,6 +203,11 @@ aside{
 #aside-top img:hover, #aside-bottom img:hover{
     opacity: 1;
 }
+
+#new-playlist{
+    display: none;
+}
+
 
 /* #aside-bottom{
     height: 90px;
@@ -236,6 +249,7 @@ aside{
 #bottom-center-controllers i{
     margin: 0 0.5rem;
 }
+
 #bottom-center-time{
     display: flex;
     justify-content: space-between;
@@ -268,26 +282,74 @@ aside{
 /* mobile s */
 @media only screen and (min-width: 480px ){
     aside{
-        width: 250px;
+        width: 160px;
     }
 
     main{
-        width: calc(100% - 250px);
+        width: calc(100% - 160px);
     }
 
     #upgrade{
-        width: calc(100% - 250px);
+        width: calc(100% - 160px);
+    }
+
+    #aside-top .logo{
+        display: block;
+        width: 80px;
+        }
+
+    #aside-top .logo-small{
+        display: none;
+        }  
+
+    #aside-top ul li a{
+        display: inline-block;
+    }
+
+    #aside-top li img {
+        display: inline-block;
+        width: 30px;
+        margin: 0 10px;
+    }
+
+    #aside-first-menu {
+        display: flex;
+        align-items: center;
+    }
+
+    #new-playlist{
+        display: block;
+        margin: 10px 0;
+    }
+
+    #new-playlist .btn-playlist::before{
+        content: '+';
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+        text-align: center;
+        color: black;
+        background-color: gray;
+        display: inline-block;
+        margin-left: 10px;
+    }
+
+    #new-playlist ul li{
+        margin: 10px 0;
     }
     
 }
+
+/* tablet */
 
 @media only screen and (min-width: 780px ){
     #recently-played .album{
         flex-basis: calc(100% / 4);
-    }
+    }      
     
 }
 
+/* desktop */
 @media only screen and (min-width: 1024px ){
     #recently-played .album{
         flex-basis: calc(100% / 6 );
